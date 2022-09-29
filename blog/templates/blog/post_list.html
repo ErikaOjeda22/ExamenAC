@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Erika Ojeda ISI V9</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+        <br>
+        <br>
+        <h2 class="text-primary text-center">Examen de Algoritmos de Clasificación</h2>
+        <br>
+        <br>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table table-bordered text-center">
+                    <thead class="table-dark text-white fw-lighter">
+                        <tr>
+                            <th>Dato 1</th>
+                            <th>Dato 2</th>
+                            <th>Dato 3</th>
+                            <th>Dato 4</th>
+                            <th>Suma</th>
+                        </tr>
+                    </thead>
+                    {% for dat,sum in contexto %}
+                    <tbody class="fw-lighter">
+                        <tr>
+                            <td>{{dat.dato1}}</td>
+                            <td>{{dat.dato2}}</td>
+                            <td>{{dat.dato3}}</td>
+                            <td>{{dat.dato4}}</td>
+                            <td>{{sum}}</td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
