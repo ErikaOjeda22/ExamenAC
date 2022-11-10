@@ -16,13 +16,23 @@ def post_4(request):
         X3=int(i.dato4)
         Xx=i.dato2
         sum=recorre(request)
-        distancia= (((sum[0]-X1)**(2))+((sum[1]-X2)**(2))+((sum[2]-X3)**(2)))**(0.5)
+        distancia = (((sum[0]-X1)**(2))+((sum[1]-X2)**(2))+((sum[2]-X3)**(2)))**(0.5)
         fila=[distancia,Xx]
         #lista.append(distancia)
         lista.append(fila) #Se concateno la distancia con su clase
     lista.sort() #Aqui ya se ordenaron correctamente
-    res = lista[0][1]
-    resultado = "Los valores ingresados pertenecen a la clase:  "+res
+
+    j=0
+    valK=(sum[3])
+    nuevalista = []
+    for j in range(int(valK)):
+        nuevalista.append(lista[j][1])
+
+    res=nuevalista
+    #res=max(set(nuevalista)), key = nuevalista.count
+    #res = nuevalista.count()
+
+    resultado = "Los valores ingresados pertenecen a la clase: "+str(res) #Funciona K
 
     #return HttpResponse(lista)
     #return HttpResponse(resultado) #Confiable
@@ -33,5 +43,6 @@ def recorre(request):
     X=int(request.GET["X"])
     Y=int(request.GET["Y"])
     Z=int(request.GET["Z"])
-    suma=[X,Y,Z]
+    K=int(request.GET["K"])
+    suma=[X,Y,Z,K]
     return suma
