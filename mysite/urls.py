@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from blog4 import views
+from blog4 import views as views4
+from blog5 import views as views5
+from blog6 import views as views6
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,7 +27,10 @@ urlpatterns = [
     path('blog4/', include('blog4.urls')),
     path('blog5/', include('blog5.urls')),
     path('blog6/', include('blog6.urls')),
-    path('blog6/', include('blog6.urls')),
-    path('post_list4/',views.post_list4),
-    path('post_4/',views.post_4),
+    path('post_list4/',views4.post_list4),
+    path('post_4/',views4.post_4),
+    path('post_list5/',views5.post_list5),
+    path('post_5/',views5.post_5),
+    path('post_list6/',views6.post_list6),
+    path('post_6/',views6.post_6),
 ]

@@ -32,11 +32,9 @@ def post_4(request):
     #res=max(set(nuevalista)), key = nuevalista.count
     #res = nuevalista.count()
 
-    resultado = "Los valores ingresados pertenecen a la clase: "+str(res) #Funciona K
+    resu = max(set(res), key = res.count)
 
-    #return HttpResponse(lista)
-    #return HttpResponse(resultado) #Confiable
-    #return render(request, 'resultado4.html', {'resultado': resultado}) #Prueba.
+    resultado = "Los valores ingresados pertenecen a la clase: "+str(resu)
     return render(request, 'blog4/resultado4.html', {'resultado':resultado}) #Otra prueba.
 
 def recorre(request):
